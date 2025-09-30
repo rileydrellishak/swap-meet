@@ -43,14 +43,12 @@ class Vendor:
 
 
     def swap_first_item(self, other_vendor):
+        if not self.inventory or not other_vendor.inventory:
+            return False
         
-        temp_item = self.remove(self.inventory[0])
-        self.inventor
-        self
-
-        temp_item = self.inventory[0]
-        self.inventory[0] = other_vendor.invetory[0]
-        other_vendor.inventory[0] = temp_item
+        self.add(other_vendor.remove(other_vendor.inventory[0]))
+        other_vendor.add(self.remove(self.inventory[0]))
+        return True
 
          
 
