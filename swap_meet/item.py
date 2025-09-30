@@ -6,7 +6,7 @@ class Item:
         self.id = uuid.uuid4().int if id is None else id
 
     def get_category(self):
-        return self.__class__.__name__
+        return "Item"
     
 # def get_by_id(self, id):
 # if the id given matches the id of an item in inventory, return the item

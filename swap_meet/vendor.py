@@ -24,13 +24,13 @@ class Vendor:
                 self.inventory[-1] = item
                 item_popped = self.inventory.pop(-1)
                 return item_popped
+        return False
         return False   
 
-        # if item in self.inventory:
-        #     self.inventory.remove(item)
-        #     return item
-        # else:
-        #     return False   
-
+    def get_by_id(self, id):
+        for item in self.inventory:
+            if item.id == id:
+                return item
+        return None
 
 
