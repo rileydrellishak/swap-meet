@@ -15,7 +15,7 @@ class Vendor:
         '''
         This method removes an item from the inventory list.
         Input: item to be removed from the inventory.
-        Output: 
+        Output: Item which is removed, Return False if item not present.
         '''
         for position in range(len(self.inventory)):
             if self.inventory[position] == item:
@@ -24,8 +24,7 @@ class Vendor:
                 self.inventory[-1] = item
                 item_popped = self.inventory.pop(-1)
                 return item_popped
-            else:
-                return False
+        return False   
 
         # if item in self.inventory:
         #     self.inventory.remove(item)
