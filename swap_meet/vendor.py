@@ -32,4 +32,11 @@ class Vendor:
                 return item
         return None
 
-
+    def swap_items(self, other_vendor, my_item, their_item):
+        if my_item not in self.inventory or their_item not in other_vendor.inventory:
+            return False
+        giving = self.remove(my_item)
+        taking = other_vendor.remove(their_item)
+        self.add(taking)
+        other_vendor.add(giving)
+        return True
