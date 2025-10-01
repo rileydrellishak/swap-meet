@@ -10,5 +10,6 @@ class Clothing(Item):
         return "Clothing"
     
     def __str__(self):
-        return (f"An object of type {self.get_category()} with id {self.id}. "
-        f"It is made from {self.fabric} fabric.")
+        parent_summary = super().__str__()
+        child_summary = f"It is made from {self.fabric} fabric."
+        return f"{parent_summary} {child_summary}"
