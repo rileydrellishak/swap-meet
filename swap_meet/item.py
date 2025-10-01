@@ -25,9 +25,9 @@ class Item:
         '''
         Returns a string literal describing the condition of the item.
         Input: None (must be called on an instance of Item).
-        Output: a string literal representing a description of the condition on a scale from 0 to 5, 5 being the best condition.
+        Output: a string literal representing a description of the condition on a scale from 0 to 5 (inclusive, floats or integers), 5 being the best condition.
         '''
-        if  0 <= self.condition  < 1:
+        if 0 <= self.condition  < 1:
             return "Horrible!"
         elif 1 <= self.condition < 2:
             return "Bad"
