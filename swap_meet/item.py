@@ -34,9 +34,9 @@ class Item:
         elif 2 <= self.condition < 3:
             return "Mid"
         elif 3 <= self.condition < 4:
-            return "Decent"
+            return "Good"
         elif 4 <= self.condition < 5:
-            return "Pretty good"
+            return "Really good"
         elif self.condition == 5:
             return "Mint!"
         
