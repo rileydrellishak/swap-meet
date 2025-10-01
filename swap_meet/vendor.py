@@ -1,3 +1,4 @@
+from swap_meet.item import Item
 class Vendor:
     def __init__(self, inventory = None):
         self.inventory = [] if inventory is None else inventory
@@ -59,4 +60,17 @@ class Vendor:
 
         return category_list       
                 
+    def get_best_by_category(self, category):
+        highest_condition = 0
+        best_category_item = None
+        for item in self.inventory:
+            if item.get_category() == category and item.condition > highest_condition:
+                highest_condition = item.condition
+                best_category_item = item
+        return best_category_item        
+
+
+
+
+
 
