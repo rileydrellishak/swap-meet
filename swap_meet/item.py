@@ -27,15 +27,16 @@ class Item:
         Input: None (must be called on an instance of Item).
         Output: a string literal representing a description of the condition on a scale from 0 to 5, 5 being the best condition.
         '''
-        if self.condition >= 0 and self.condition < 1:
+        if  0 <= self.condition  < 1:
             return "Horrible!"
-        elif self.condition >= 1 and self.condition < 2:
+        elif 1 <= self.condition < 2:
             return "Bad"
-        elif self.condition >= 2 and self.condition < 3:
+        elif 2 <= self.condition < 3:
             return "Mid"
-        elif self.condition >= 3 and self.condition < 4:
+        elif 3 <= self.condition < 4:
             return "Decent"
-        elif self.condition >= 4 and self.condition < 5:
+        elif 4 <= self.condition < 5:
             return "Pretty good"
         elif self.condition == 5:
             return "Mint!"
+        
