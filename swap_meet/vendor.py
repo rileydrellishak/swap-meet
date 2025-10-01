@@ -68,6 +68,9 @@ class Vendor:
         Inputs: other_vendor (an instance of Vendor), my_priority (a string representing the item category the user wants swapped into their inventory), their_priority (a string representing the item category the other vendor wants swapped into their inventory)
         Output: Returns True is swap was possible, False if Vendor has no item that matches their_priority category or other_vendor has no item that matches my_priority category.
         '''
-        # 
+        # self.get_best_by_category(their_priority)
+        # other_vendor.get_best_by_category(my_priority)
+        # if either of those are None, then False
+        # else... self.swap_items(other_vendor, self.get_best_by_category(their_priority), other_vendor.get_best_by_category(my_priority))
         return True
 
