@@ -65,6 +65,11 @@ class Vendor:
 
          
     def get_by_category(self, category):
+        '''
+        Returns a list of item from inventory in a specific category
+        Input : category of the item (string)
+        Outputs: list of item in a specific category, Returns empty list if there is no item in the category.
+        '''
         category_list = []
         for item in self.inventory:
             if item.get_category() == category:
@@ -73,6 +78,12 @@ class Vendor:
         return category_list       
                 
     def get_best_by_category(self, category):
+        '''
+        Returns a best item in a category
+        Input : category of the item (string)
+        Outputs: return item with best category, Returns None if there is no item in the category.
+        '''
+
         highest_condition = 0
         best_category_item = None
         for item in self.inventory:
