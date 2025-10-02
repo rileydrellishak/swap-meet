@@ -1,6 +1,6 @@
-from swap_meet.item import Item
 class Vendor:
-    def __init__(self, inventory = None):
+
+    def __init__(self, inventory=None):
         self.inventory = [] if inventory is None else inventory
 
     def add(self, item):
@@ -8,10 +8,10 @@ class Vendor:
         This method add an item to the inventory list.
         Input: item to be added to inventory
         Output: item added to the inventory
-
         '''
         self.inventory.append(item)
         return item
+    
     def remove(self, item):
         '''
         This method removes an item from the inventory list.
@@ -63,7 +63,6 @@ class Vendor:
         other_vendor.add(self.remove(self.inventory[0]))
         return True
 
-         
     def get_by_category(self, category):
         '''
         Returns a list of item from inventory in a specific category
@@ -83,7 +82,6 @@ class Vendor:
         Input : category of the item (string)
         Outputs: return item with best category, Returns None if there is no item in the category.
         '''
-
         highest_condition = 0
         best_category_item = None
         for item in self.inventory:
@@ -92,19 +90,18 @@ class Vendor:
                 best_category_item = item
         return best_category_item        
 
-
-
-
     def swap_best_by_category(self, other_vendor, my_priority, their_priority):
         '''
         Finds and swaps the best item of a certain category with another vendor.
         Inputs: other_vendor (an instance of Vendor), my_priority (a string representing the item category the user wants swapped into their inventory), their_priority (a string representing the item category the other vendor wants swapped into their inventory)
         Output: Returns True is swap was possible, False if Vendor has no item that matches their_priority category or other_vendor has no item that matches my_priority category.
         '''
-        # self.get_best_by_category(their_priority)
-        # other_vendor.get_best_by_category(my_priority)
-        # if either of those are None, then False
-        # else... self.swap_items(other_vendor, self.get_best_by_category(their_priority), other_vendor.get_best_by_category(my_priority))
+        if (self.get_best_by_category(their_priority) is None or 
+            other_vendor.get_best_by_category(my_priority) is None):
+            return False
+        
+        vendor_receives = self.get_best_by_category(their_priority)
+        other_vendor_receives = other_vendor.get_best_by_category(my_priority)
+
+        self.swap_items(other_vendor, vendor_receives, other_vendor_receives)
         return True
-
-

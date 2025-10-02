@@ -7,7 +7,8 @@ class Item:
         self.condition = condition
 
     def get_category(self):
-        '''Returns a string of the name of the class.
+        '''
+        Returns a string of the name of the class.
         Input: None (must be called on an instance of Item).
         Output: a string literal representing the name of the class.
         '''
